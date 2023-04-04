@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let nome = prompt("Digite seu nome");
+
+        if(nome.length > 3)
+        {
+            let idade = prompt("Digite sua idade");
+
+            if(idade > 0 && idade < 150)
+            {
+                let salario = parseFloat(prompt("Digite seu salario"));
+
+                if(salario > 0)
+                {
+                    let sexo = prompt("Digite seu sexo, 'F' ou 'M'");
+
+                    if(sexo == 'f' || sexo == 'm' || sexo == 'M' || sexo == 'F' )
+                    {
+                        let estadoCivil = prompt("'S' 'C' 'V' 'D'");
+
+                        if(estadoCivil == 's' || estadoCivil == 'c' || estadoCivil == 'v' || estadoCivil == 'd' || estadoCivil == 'S' || estadoCivil == 'C' || estadoCivil == 'V' || estadoCivil == 'D')
+                        {
+                            document.write("Nome: " + nome);
+                            document.write("<br>Idade: " + idade);
+                            document.write("<br>Salario: " + salario);
+                            document.write("<br>Sexo: " + sexo);
+                            document.write("<br>Estado Civil: " + estadoCivil);
+                        }
+                        else
+                        {
+                            alert("ERRO!!")
+                        }
+                    }
+                    else
+                    {
+                        alert("ERRO!!")
+                    }
+                }
+                else
+                {
+                    alert("ERRO!!")
+                }
+            }
+            else
+            {
+                alert("ERRO!!")
+            }
+        }
+        else
+        {
+            alert("ERRO!!")
+        }
+    </script>
+</body>
+</html>
