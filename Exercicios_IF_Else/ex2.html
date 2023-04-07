@@ -13,7 +13,7 @@
         let n2 = prompt("Digite a segunda nota")
         let result = (n1 + n2)/2;
 
-        if(result >= 7)
+        if(result <= 9)
         {
             alert("Aprovado!!")
         }
@@ -21,6 +21,11 @@
         {
             alert("Reprovado!!")
         }
+        else if(result == 10)
+        {
+            alert("Aprovado com distinção!!")
+        }
+
     </script>
 </body>
 </html>
