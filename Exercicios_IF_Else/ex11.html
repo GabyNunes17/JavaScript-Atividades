@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nota1 = parseFloat(prompt("Digite a primeira nota parcial:"));
+        let nota2 = parseFloat(prompt("Digite a segunda nota parcial:"));
+
+        let media = (nota1 + nota2) / 2;
+        let conceito;
+        let mensagem;
+
+        if (media >= 9.0 && media <= 10.0) {
+        conceito = "A";
+        mensagem = "APROVADO";
+        } else if (media >= 7.5 && media < 9.0) {
+        conceito = "B";
+        mensagem = "APROVADO";
+        } else if (media >= 6.0 && media < 7.5) {
+        conceito = "C";
+        mensagem = "APROVADO";
+        } else if (media >= 4.0 && media < 6.0) {
+        conceito = "D";
+        mensagem = "REPROVADO";
+        } else {
+        conceito = "E";
+        mensagem = "REPROVADO";
+        }
+
+        alert("Notas: " + nota1 + ", " + nota2 + "\nMédia: " + media.toFixed(1) + "\nConceito: " + conceito + "\nSituação: " + mensagem);
+
+    </script>
+</body>
+</html>

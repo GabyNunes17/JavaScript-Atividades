@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let valorHora = parseFloat(prompt("Digite o valor da sua hora de trabalho:"));
+        let horasTrabalhadas = parseFloat(prompt("Digite a quantidade de horas trabalhadas no mês:"));
+
+        let salarioBruto = valorHora * horasTrabalhadas;
+
+        let descontoIR;
+        if (salarioBruto <= 900) {
+        descontoIR = 0;
+        } else if (salarioBruto <= 1500) {
+        descontoIR = 5;
+        } else if (salarioBruto <= 2500) {
+        descontoIR = 10;
+        } else {
+        descontoIR = 20;
+        }
+
+        let valorDescontoIR = (salarioBruto * descontoIR) / 100;
+        let valorDescontoINSS = (salarioBruto * 10) / 100;
+        let valorFGTS = (salarioBruto * 11) / 100;
+
+        let totalDescontos = valorDescontoIR + valorDescontoINSS;
+        let salarioLiquido = salarioBruto - totalDescontos;
+
+        alert("Salário Bruto: R$ " + salarioBruto.toFixed(2));
+        alert("(-) IR (" + descontoIR + "%): R$ " + valorDescontoIR.toFixed(2));
+        alert("(-) INSS (10%): R$ " + valorDescontoINSS.toFixed(2));
+        alert("FGTS (11%): R$ " + valorFGTS.toFixed(2));
+        alert("Total de descontos: R$ " + totalDescontos.toFixed(2));
+        alert("Salário Líquido: R$ " + salarioLiquido.toFixed(2));
+
+    </script>
+</body>
+</html>
