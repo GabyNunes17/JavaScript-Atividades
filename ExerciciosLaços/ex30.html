@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const precoPao = parseFloat(prompt("Digite o preço do pão:"));
+
+        alert("Panificadora Pão Quentinho - Tabela de preços");
+
+        for (let quantidade = 1; quantidade <= 50; quantidade++) {
+        const precoTotal = quantidade * precoPao;
+        alert(`${quantidade} pães - R$ ${precoTotal.toFixed(2)}`);
+        }
+
+    </script>
+</body>
+</html>

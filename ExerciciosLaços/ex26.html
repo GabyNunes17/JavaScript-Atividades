@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const totalEleitores = parseInt(prompt("Digite o número total de eleitores:"));
+        const votos = {
+        candidato1: 0,
+        candidato2: 0,
+        candidato3: 0
+        };
+
+        for (let i = 1; i <= totalEleitores; i++) {
+        const voto = parseInt(prompt(`Eleitor ${i}, digite o número do candidato: (1, 2 ou 3)`));
+        
+        switch (voto) {
+            case 1:
+            votos.candidato1++;
+            break;
+            case 2:
+            votos.candidato2++;
+            break;
+            case 3:
+            votos.candidato3++;
+            break;
+            default:
+            console.log("Voto inválido.");
+        }
+        }
+
+        alert(`Total de votos do candidato 1: ${votos.candidato1}`);
+        alert(`Total de votos do candidato 2: ${votos.candidato2}`);
+        alert(`Total de votos do candidato 3: ${votos.candidato3}`);
+
+    </script>
+</body>
+</html>
