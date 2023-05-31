@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let valorDivida = parseFloat(prompt("Digite o valor da dívida:"));
+        let valorJuros = valorDivida * 0.1; // 10% de juros
+        let quantidadeParcelas = parseInt(prompt("Digite a quantidade de parcelas:"));
+        let valorParcela = (valorDivida + valorJuros) / quantidadeParcelas;
+
+        alert("Tabela de Parcelamento:\n" +
+        `Valor da dívida: R$ ${valorDivida.toFixed(2)}\n` +
+        `Valor dos juros: R$ ${valorJuros.toFixed(2)}\n` +
+        `Quantidade de parcelas: ${quantidadeParcelas}\n` +
+        `Valor da parcela: R$ ${valorParcela.toFixed(2)}`);
+
+    </script>
+</body>
+</html>

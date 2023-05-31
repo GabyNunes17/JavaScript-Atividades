@@ -8,30 +8,29 @@
 </head>
 <body>
     <script>
-        function verificarNumeroPrimo(numero) {
-        if (numero <= 1) {
-            return false;
+        const numero = parseInt(prompt("Digite um número: "));
+        let primos = [];
+
+        for (let i = 1; i <= numero; i++) {
+        let numeroPrimo = true;
+
+        if (i === 1 || i === 2) {
+            numeroPrimo = false;
         }
 
-        for (let i = 2; i <= Math.sqrt(numero); i++) {
-            if (numero % i === 0) {
-            return false;
+        for (let j = 2; j < i; j++) {
+            if (i % j === 0) {
+            numeroPrimo = false;
+            break;
             }
         }
 
-        return true;
-        }
-
-        let limite = parseInt(prompt("Digite um número inteiro:"));
-        let numerosPrimos = [];
-
-        for (let i = 1; i <= limite; i++) {
-        if (verificarNumeroPrimo(i)) {
-            numerosPrimos.push(i);
+        if (numeroPrimo) {
+            primos.push(i);
         }
         }
 
-        alert(`Números primos até ${limite}: ${numerosPrimos.join(", ")}`);
+        alert("Os números primos entre 1 e " + numero + " são: " + primos.join(", "));
 
     </script>
 </body>

@@ -8,29 +8,25 @@
 </head>
 <body>
     <script>
-        function verificarNumeroPrimo(numero) {
-        if (numero <= 1) {
-            return false;
+       const numero = parseInt(prompt("Digite um número: "));
+        let numeroPrimo = true;
+
+        if (numero === 1 || numero === 2) {
+        numeroPrimo = false;
         }
 
-        for (let i = 2; i <= Math.sqrt(numero); i++) {
-            if (numero % i === 0) {
-            return false;
-            }
+        for (let i = 2; i < numero; i++) {
+        if (numero % i === 0) {
+            numeroPrimo = false;
+            break;
+        }
         }
 
-        return true;
-        }
-
-        let numero = parseInt(prompt("Digite um número inteiro:"));
-        let resultado = verificarNumeroPrimo(numero);
-
-        if (resultado) {
-        alert(`${numero} é um número primo.`);
+        if (numeroPrimo) {
+        alert("O número " + numero + " é primo");
         } else {
-        alert(`${numero} não é um número primo.`);
+        alert("O número " + numero + " não é primo");
         }
-
     </script>
 </body>
 </html>

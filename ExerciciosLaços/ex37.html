@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let salarioInicial = parseFloat(prompt("Digite o salário inicial do funcionário:"));
+        let salarioAtual = salarioInicial;
+        let percentualAumento = 0.015; // 1,5%
+
+        for (let ano = 1996; ano <= 2023; ano++) {
+        salarioAtual += salarioAtual * percentualAumento;
+        percentualAumento *= 2; // Aumento dobrado a cada ano
+        }
+
+        alert(`O salário atual do funcionário é R$ ${salarioAtual.toFixed(2)}`);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let cidades = [
+        { codigo: "001", veiculos: 1500, acidentes: 50 },
+        { codigo: "002", veiculos: 2200, acidentes: 70 },
+        { codigo: "003", veiculos: 1800, acidentes: 40 },
+        { codigo: "004", veiculos: 2500, acidentes: 90 },
+        { codigo: "005", veiculos: 1900, acidentes: 60 }
+        ];
+
+        let maiorIndiceAcidentes = -1;
+        let menorIndiceAcidentes = Number.MAX_VALUE;
+        let cidadeMaiorIndice = "";
+        let cidadeMenorIndice = "";
+        let somaVeiculos = 0;
+        let somaAcidentes = 0;
+        let countCidadesMenos2000Veiculos = 0;
+
+        for (let cidade of cidades) {
+        let indiceAcidentes = cidade.acidentes / cidade.veiculos;
+
+        if (indiceAcidentes > maiorIndiceAcidentes) {
+            maiorIndiceAcidentes = indiceAcidentes;
+            cidadeMaiorIndice = cidade.codigo;
+        }
+
+        if (indiceAcidentes < menorIndiceAcidentes) {
+            menorIndiceAcidentes = indiceAcidentes;
+            cidadeMenorIndice = cidade.codigo;
+        }
+
+        somaVeiculos += cidade.veiculos;
+        somaAcidentes += cidade.acidentes;
+
+        if (cidade.veiculos < 2000) {
+            countCidadesMenos2000Veiculos++;
+        }
+        }
+
+        let mediaVeiculos = somaVeiculos / cidades.length;
+        let mediaAcidentesMenos2000Veiculos = somaAcidentes / countCidadesMenos2000Veiculos;
+
+        alert("Estatísticas:\n" +
+        `Maior índice de acidentes: ${maiorIndiceAcidentes} (Cidade: ${cidadeMaiorIndice})\n` +
+        `Menor índice de acidentes: ${menorIndiceAcidentes} (Cidade: ${cidadeMenorIndice})\n` +
+        `Média de veículos nas cinco cidades: ${mediaVeiculos}\n` +
+        `Média de acidentes nas cidades com menos de 2.000 veículos: ${mediaAcidentesMenos2000Veiculos}`);
+
+    </script>
+</body>
+</html>

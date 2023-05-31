@@ -8,30 +8,21 @@
 </head>
 <body>
     <script>
-        function verificarNumeroPrimo(numero) {
-        if (numero <= 1) {
-            return false;
-        }
+       const numero = parseInt(prompt("Digite um número: "));
+        const numeroInicial = parseInt(prompt("Digite o número inicial: "));
+        const numeroFinal = parseInt(prompt("Digite o número final: "));
 
-        for (let i = 2; i <= Math.sqrt(numero); i++) {
-            if (numero % i === 0) {
-            return false;
-            }
-        }
+        if (numeroFinal < numero) {
+        alert("O valor final deve ser maior ou igual ao valor inicial.");
+        } else {
+        alert(
+            `Vou montar a tabuada de ${numero} começando em ${numeroInicial} e terminando em ${numeroFinal}:`
+        );
 
-        return true;
-        }
-
-        let limite = parseInt(prompt("Digite um número inteiro:"));
-        let numerosPrimos = [];
-
-        for (let i = 1; i <= limite; i++) {
-        if (verificarNumeroPrimo(i)) {
-            numerosPrimos.push(i);
+        for (let i = numeroInicial; i <= numeroFinal; i++) {
+            alert(`${numero} x ${i} = ${numero * i}`)
         }
         }
-
-        alert(`Números primos até ${limite}: ${numerosPrimos.join(", ")}`);
 
     </script>
 </body>
