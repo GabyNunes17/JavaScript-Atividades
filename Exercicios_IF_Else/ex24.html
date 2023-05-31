@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const tipoCarne = prompt("Digite o tipo de carne (F - Filé Duplo, A - Alcatra, P - Picanha):").toUpperCase();
+        const quantidade = parseFloat(prompt("Digite a quantidade de carne (em Kg):"));
+        const formaPagamento = prompt("Digite a forma de pagamento (C - Cartão Tabajara, D - Dinheiro):").toUpperCase();
+
+        const precoFileDuploAte5Kg = 4.90;
+        const precoFileDuploAcima5Kg = 5.80;
+        const precoAlcatraAte5Kg = 5.90;
+        const precoAlcatraAcima5Kg = 6.80;
+        const precoPicanhaAte5Kg = 6.90;
+        const precoPicanhaAcima5Kg = 7.80;
+
+        let precoTotal;
+        let tipoCarneTexto;
+
+        switch (tipoCarne) {
+        case "F":
+            if (quantidade <= 5) {
+            precoTotal = quantidade * precoFileDuploAte5Kg;
+            tipoCarneTexto = "Filé Duplo";
+            } else {
+            precoTotal = quantidade * precoFileDuploAcima5Kg;
+            tipoCarneTexto = "Filé Duplo";
+            }
+            break;
+        case "A":
+            if (quantidade <= 5) {
+            precoTotal = quantidade * precoAlcatraAte5Kg;
+            tipoCarneTexto = "Alcatra";
+            } else {
+            precoTotal = quantidade * precoAlcatraAcima5Kg;
+            tipoCarneTexto = "Alcatra";
+            }
+            break;
+        case "P":
+            if (quantidade <= 5) {
+            precoTotal = quantidade * precoPicanhaAte5Kg;
+            tipoCarneTexto = "Picanha";
+            } else {
+            precoTotal = quantidade * precoPicanhaAcima5Kg;
+            tipoCarneTexto = "Picanha";
+            }
+            break;
+        default:
+            console.log("Tipo de carne inválido.");
+        }
+
+        let valorDesconto = 0;
+
+        if (formaPagamento === "C") {
+        valorDesconto = precoTotal * 0.05;
+        precoTotal -= valorDesconto;
+        }
+
+        alert(`Tipo de carne: ${tipoCarneTexto}`);
+        alert(`Quantidade: ${quantidade.toFixed(2)} Kg`);
+        alert(`Preço total: R$ ${precoTotal.toFixed(2)}`);
+        alert(`Forma de pagamento: ${formaPagamento === "C" ? "Cartão Tabajara" : "Dinheiro"}`);
+        alert(`Valor do desconto: R$ ${valorDesconto.toFixed(2)}`);
+        alert(`Valor a pagar: R$ ${(precoTotal - valorDesconto).toFixed(2)}`);
+
+    </script>
+</body>
+</html>

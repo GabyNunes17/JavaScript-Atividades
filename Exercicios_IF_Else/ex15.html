@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const data = prompt("Digite uma data no formato dd/mm/aaaa:");
+
+        if (data.length !== 10 || data[2] !== '/' || data[5] !== '/') {
+        alert("Formato de data inválido. Digite no formato dd/mm/aaaa.");
+        } else {
+        const [dia, mes, ano] = data.split("/");
+        const diaNum = parseInt(dia);
+        const mesNum = parseInt(mes);
+        const anoNum = parseInt(ano);
+
+        if (mesNum < 1 || mesNum > 12 || diaNum < 1 || diaNum > 31 || anoNum < 1 || anoNum > 9999) {
+            alert("Data inválida.");
+        } else {
+
+            const meses30Dias = [4, 6, 9, 11];
+            let limiteDia;
+
+            if (mesNum === 2) {
+            if ((anoNum % 4 === 0 && anoNum % 100 !== 0) || anoNum % 400 === 0) {
+                limiteDia = 29;
+            } else {
+                limiteDia = 28;
+            }
+            } else if (meses30Dias.includes(mesNum)) {
+            limiteDia = 30;
+            } else {
+            limiteDia = 31;
+            }
+
+            if (diaNum > limiteDia) {
+            alert("Data inválida.");
+            } else {
+            alert("Data válida.");
+            }
+        }
+        }
+
+    </script>
+</body>
+</html>

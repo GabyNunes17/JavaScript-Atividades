@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const valorMinimo = 10;
+        const valorMaximo = 600;
+
+        const valorSaque = parseInt(prompt("Digite o valor do saque (entre 10 e 600 reais):"));
+
+        if (valorSaque < valorMinimo || valorSaque > valorMaximo) {
+        alert("Valor de saque inválido. O valor deve ser entre 10 e 600 reais.");
+        } else {
+        let quantidadeNotas100 = Math.floor(valorSaque / 100);
+        let valorRestante = valorSaque % 100;
+
+        let quantidadeNotas50 = Math.floor(valorRestante / 50);
+        valorRestante %= 50;
+
+        let quantidadeNotas10 = Math.floor(valorRestante / 10);
+        valorRestante %= 10;
+
+        let quantidadeNotas5 = Math.floor(valorRestante / 5);
+        valorRestante %= 5;
+
+        let quantidadeNotas1 = valorRestante;
+
+        alert(`Para o saque de R$ ${valorSaque}, serão fornecidas:`);
+        alert(`${quantidadeNotas100} nota(s) de 100 reais`);
+        alert(`${quantidadeNotas50} nota(s) de 50 reais`);
+        alert(`${quantidadeNotas10} nota(s) de 10 reais`);
+        alert(`${quantidadeNotas5} nota(s) de 5 reais`);
+        alert(`${quantidadeNotas1} nota(s) de 1 real`);
+        }
+
+    </script>
+</body>
+</html>

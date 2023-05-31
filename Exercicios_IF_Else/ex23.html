@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const quantidadeMorangos = parseFloat(prompt("Digite a quantidade de morangos (em Kg):"));
+        const quantidadeMacas = parseFloat(prompt("Digite a quantidade de maçãs (em Kg):"));
+
+        const precoMorangoAte5Kg = 2.50;
+        const precoMorangoAcima5Kg = 2.20;
+        const precoMacaAte5Kg = 1.80;
+        const precoMacaAcima5Kg = 1.50;
+
+        let valorAPagar = 0;
+
+        if (quantidadeMorangos <= 5) {
+        valorAPagar += quantidadeMorangos * precoMorangoAte5Kg;
+        } else {
+        valorAPagar += quantidadeMorangos * precoMorangoAcima5Kg;
+        }
+
+        if (quantidadeMacas <= 5) {
+        valorAPagar += quantidadeMacas * precoMacaAte5Kg;
+        } else {
+        valorAPagar += quantidadeMacas * precoMacaAcima5Kg;
+        }
+
+        if ((quantidadeMorangos + quantidadeMacas > 8) || valorAPagar > 25) {
+        valorAPagar *= 0.9; 
+        }
+
+        alert(`Valor a pagar: R$ ${valorAPagar.toFixed(2)}`);
+
+    </script>
+</body>
+</html>
