@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        do {
+        const numero = parseInt(prompt("Digite um número inteiro positivo e menor que 16 (ou um número negativo para sair):"));
+
+        if (numero < 0) {
+            break; 
+        }
+
+        if (numero >= 16) {
+            alert("Número inválido. O número deve ser menor que 16.");
+            continue; 
+        }
+
+        let fatorial = 1;
+
+        for (let i = numero; i >= 1; i--) {
+            fatorial *= i;
+        }
+
+        alert(`O fatorial de ${numero} é ${fatorial}.`);
+        } while (true);
+
+    </script>
+</body>
+</html>

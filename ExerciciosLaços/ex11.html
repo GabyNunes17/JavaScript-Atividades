@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const numero1 = parseInt(prompt("Digite o primeiro número:"));
+        const numero2 = parseInt(prompt("Digite o segundo número:"));
+
+        alert(`Números inteiros entre ${numero1} e ${numero2}:`);
+
+        let soma = 0;
+
+        
+        const menorNumero = Math.min(numero1, numero2);
+     
+        const maiorNumero = Math.max(numero1, numero2);
+
+        for (let i = menorNumero; i <= maiorNumero; i++) {
+        alert(i);
+        soma += i;
+        }
+
+        alert(`A soma dos números é: ${soma}`);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let populacaoA = parseInt(prompt("Digite a população da cidade A:"));
+        let populacaoB = parseInt(prompt("Digite a população da cidade B:"));
+
+        const taxaA = parseFloat(prompt("Digite a taxa de crescimento da cidade A:"));
+        const taxaB = parseFloat(prompt("Digite a taxa de crescimento da cidade B:"));
+
+        let anos = 0;
+
+        while (populacaoA < populacaoB) {
+        populacaoA += populacaoA * taxaA;
+        populacaoB += populacaoB * taxaB;
+        anos++;
+        }
+
+        alert(`A população A ultrapassará a população B em ${anos} anos.`);
+    </script>
+</body>
+</html>

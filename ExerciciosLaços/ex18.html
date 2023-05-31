@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const quantidadeNumeros = parseInt(prompt("Digite a quantidade de números:"));
+        let menorValor;
+        let maiorValor;
+        let soma = 0;
+
+        for (let i = 1; i <= quantidadeNumeros; i++) {
+        const numero = parseFloat(prompt(`Digite o número ${i}:`));
+        
+        if (i === 1) {
+            menorValor = numero;
+            maiorValor = numero;
+        } else {
+            if (numero < menorValor) {
+            menorValor = numero;
+            }
+            
+            if (numero > maiorValor) {
+            maiorValor = numero;
+            }
+        }
+        
+        soma += numero;
+        }
+
+        alert(`Menor valor: ${menorValor}`);
+        alert(`Maior valor: ${maiorValor}`);
+        alert(`Soma dos valores: ${soma}`);
+
+    </script>
+</body>
+</html>
