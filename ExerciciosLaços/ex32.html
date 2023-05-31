@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function estatisticasTemperaturas() {
+        let temperaturas = [];
+        while (true) {
+            let temperatura = prompt("Informe uma temperatura (ou 's' para sair):");
+            if (temperatura === 's') {
+            break;
+            }
+            temperaturas.push(parseFloat(temperatura));
+        }
+
+        if (temperaturas.length > 0) {
+            let menor = Math.min(...temperaturas);
+            let maior = Math.max(...temperaturas);
+            let media = temperaturas.reduce((acc, val) => acc + val, 0) / temperaturas.length;
+
+            alert(`Menor temperatura: ${menor}`);
+            alert(`Maior temperatura: ${maior}`);
+            alert(`Média das temperaturas: ${media}`);
+        }
+        }
+
+        estatisticasTemperaturas();
+
+    </script>
+</body>
+</html>
