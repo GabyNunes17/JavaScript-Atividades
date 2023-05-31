@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let notas = [];
+
+        while (true) {
+        let nomeGinasta = prompt("Digite o nome do ginasta (ou deixe em branco para encerrar):");
+        if (nomeGinasta === "") break;
+
+        let jurados = [];
+        for (let i = 1; i <= 7; i++) {
+            let nota = parseFloat(prompt(`Digite a nota do jurado ${i}:`));
+            jurados.push(nota);
+        }
+
+        notas.push({ nome: nomeGinasta, jurados: jurados });
+        }
+
+        for (let nota of notas) {
+        let melhorNota = Math.max(...nota.jurados);
+        let piorNota = Math.min(...nota.jurados);
+        let notasRestantes = nota.jurados.filter(n => n !== melhorNota && n !== piorNota);
+        let mediaNotas = notasRestantes.reduce((a, b) => a + b) / notasRestantes.length;
+
+        alert(`Atleta: ${nota.nome}\n\n` +
+            `Nota: ${nota.jurados[0]}\n` +
+            `Nota: ${nota.jurados[1]}\n` +
+            `Nota: ${nota.jurados[2]}\n` +
+            `Nota: ${nota.jurados[3]}\n` +
+            `Nota: ${nota.jurados[4]}\n` +
+            `Nota: ${nota.jurados[5]}\n` +
+            `Nota: ${nota.jurados[6]}\n\n` +
+            `Resultado final:\nAtleta: ${nota.nome}\n` +
+            `Melhor nota: ${melhorNota}\n` +
+            `Pior nota: ${piorNota}\n` +
+            `Média: ${mediaNotas.toFixed(2)}\n`);
+        }
+
+    </script>
+</body>
+</html>

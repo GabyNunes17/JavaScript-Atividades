@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let candidatos = [
+        { codigo: 1, nome: "José", votos: 0 },
+        { codigo: 2, nome: "João", votos: 0 },
+        { codigo: 3, nome: "Maria", votos: 0 },
+        { codigo: 4, nome: "Ana", votos: 0 },
+        { codigo: 5, nome: "Nulo", votos: 0 },
+        { codigo: 6, nome: "Branco", votos: 0 }
+        ];
+
+        let totalVotos = 0;
+        let totalNulos = 0;
+        let totalBrancos = 0;
+
+        while (true) {
+        let voto = parseInt(prompt("Digite o código do candidato (ou 0 para encerrar):"));
+        if (voto === 0) break;
+
+        let candidato = candidatos.find(candidato => candidato.codigo === voto);
+        if (candidato) {
+            candidato.votos++;
+            totalVotos++;
+        } else if (voto === 5) {
+            totalNulos++;
+            totalVotos++;
+        } else if (voto === 6) {
+            totalBrancos++;
+            totalVotos++;
+        } else {
+            alert("Código de candidato inválido!");
+        }
+        }
+
+        alert("Resultado da Eleição:\n");
+
+        for (let candidato of candidatos) {
+        let percentualVotos = (candidato.votos / totalVotos) * 100;
+        alert(`Candidato ${candidato.nome}: ${candidato.votos} votos (${percentualVotos.toFixed(2)}%)`);
+        }
+
+        let percentualNulos = (totalNulos / totalVotos) * 100;
+        let percentualBrancos = (totalBrancos / totalVotos) * 100;
+
+        alert(`Total de votos nulos: ${totalNulos} (${percentualNulos.toFixed(2)}%)`);
+        alert(`Total de votos em branco: ${totalBrancos} (${percentualBrancos.toFixed(2)}%)`);
+
+
+    </script>
+</body>
+</html>

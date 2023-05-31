@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      let atletas = [];
+
+        while (true) {
+        let nomeAtleta = prompt("Digite o nome do atleta (ou deixe em branco para encerrar):");
+        if (nomeAtleta === "") break;
+
+        let saltos = [];
+        for (let i = 1; i <= 5; i++) {
+            let distancia = parseFloat(prompt(`Digite a distância alcançada no ${i}º salto:`));
+            saltos.push(distancia);
+        }
+
+        atletas.push({ nome: nomeAtleta, saltos: saltos });
+        }
+
+        for (let atleta of atletas) {
+        let melhorSalto = Math.max(...atleta.saltos);
+        let piorSalto = Math.min(...atleta.saltos);
+        let mediaSaltos = (atleta.saltos.reduce((a, b) => a + b) - melhorSalto - piorSalto) / 3;
+
+        alert(`Atleta: ${atleta.nome}\n\n` +
+            `Primeiro Salto: ${atleta.saltos[0]} m\n` +
+            `Segundo Salto: ${atleta.saltos[1]} m\n` +
+            `Terceiro Salto: ${atleta.saltos[2]} m\n` +
+            `Quarto Salto: ${atleta.saltos[3]} m\n` +
+            `Quinto Salto: ${atleta.saltos[4]} m\n\n` +
+            `Melhor salto: ${melhorSalto} m\n` +
+            `Pior salto: ${piorSalto} m\n` +
+            `Média dos demais saltos: ${mediaSaltos.toFixed(2)} m\n\n` +
+            `Resultado final:\n${atleta.nome}: ${mediaSaltos.toFixed(2)} m\n`);
+        }
+
+
+    </script>
+</body>
+</html>

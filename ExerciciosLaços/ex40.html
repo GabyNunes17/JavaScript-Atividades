@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let cardapio = [
+        { codigo: 100, descricao: "Cachorro Quente", preco: 1.20 },
+        { codigo: 101, descricao: "Bauru Simples", preco: 1.30 },
+        { codigo: 102, descricao: "Bauru com Ovo", preco: 1.50 },
+        { codigo: 103, descricao: "Hambúrguer", preco: 1.20 },
+        { codigo: 104, descricao: "Cheeseburguer", preco: 1.30 },
+        { codigo: 105, descricao: "Refrigerante", preco: 1.00 }
+        ];
+
+        let totalGeral = 0;
+
+        while (true) {
+        let codigo = parseInt(prompt("Digite o código do item (ou 0 para encerrar):"));
+        if (codigo === 0) break;
+
+        let quantidade = parseInt(prompt("Digite a quantidade desejada:"));
+
+        let item = cardapio.find(item => item.codigo === codigo);
+        if (item) {
+            let valorItem = item.preco * quantidade;
+            totalGeral += valorItem;
+
+            alert(`Item: ${item.descricao}\nQuantidade: ${quantidade}\nValor a ser pago: R$ ${valorItem.toFixed(2)}`);
+        } else {
+            alert("Código de item inválido!");
+        }
+        }
+
+        alert(`Total geral do pedido: R$ ${totalGeral.toFixed(2)}`);
+
+    </script>
+</body>
+</html>
